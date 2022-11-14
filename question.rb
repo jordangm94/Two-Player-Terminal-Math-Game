@@ -27,6 +27,6 @@ class Question
 end
 
 # Test calls to ensure class and methods are working, these are calls we will have to use in Game
-new_question = Question.new
-new_question.ask_question
-new_question.validate_answer
+# new_question = Question.new
+# new_question.ask_question
+# new_question.validate_answer
