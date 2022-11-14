@@ -1,13 +1,9 @@
-# I/O - This class display output for if question is right or wrong.  
-# Maybe here is where we provide an update of the score? 
-# Methods:
-# Method for creating base skeleton of Math question
-
-
 class Question
 #At the beginning of the question, generate two random numbers. 
 
   # Ask the user what is the answer to random_number_1 + random_number_2
+  #Note: Random_number_1 and 2 here must have @ infront of them in order for them to be accessible across
+  # all methods within class, if not it will not work. 
   def ask_question 
     @random_number_1 = rand(20)
     @random_number_2 = rand(20)
@@ -27,6 +23,7 @@ class Question
   end
 end
 
+# Test calls to ensure class and methods are working, these are calls we will have to use in Game
 new_question = Question.new
 new_question.ask_question
 new_question.validate_answer
