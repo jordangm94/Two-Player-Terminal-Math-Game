@@ -1,3 +1,6 @@
+# Important note we must have all things within methods within class,
+# that way they can actually be called upon!
+
 class Question
 #At the beginning of the question, generate two random numbers. 
 
