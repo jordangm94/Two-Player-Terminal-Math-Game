@@ -1,9 +1,6 @@
-# Methods:
-# Needs a method that starts each player off with 3 lives
-# Needs a method to track lives based on how many questions they have gotten right or wrong. 
-
-#Player class is going to be used to establish player instance, using name inputted and lives will
-# automatically be set to three. 
+# Player class used to establish player instance. It initializes instance with a name, passed by user, and
+# provides player with 3 lives. Also handles subtracting lives, called from question class validate method,
+# if user has gotten question wrong. 
 
 class Player
   attr_reader :lives, :name
@@ -15,15 +12,4 @@ class Player
   def lose_lives
     @lives -= 1
   end
-  # def check_answer(answer) #This should probably go in the game class! 
-  #   if answer == false
-  #     @lives - 1
-  #   end
 end
-
-# Will need a method to track player lives subtracting etc
-
-# jordan = Player.new('Jordan')
-# # In order to see details about newly created instance, use p
-# p jordan
-

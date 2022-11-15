@@ -1,9 +1,8 @@
-# Important note we must have all things within methods within class,
-# that way they can actually be called upon!
 
 class Question
-#At the beginning of the question, generate two random numbers. 
 
+#When new question instance initialized, generate a two random numbers and the answer they equate to. 
+#Note: We use @ here to declare instance variables and ensure that these variables are usable across all methods. 
   def initialize
     @random_number_1 = rand(20)
     @random_number_2 = rand(20)
@@ -11,16 +10,15 @@ class Question
   end
 
   # Ask the user what is the answer to random_number_1 + random_number_2
-  #Note: Random_number_1 and 2 here must have @ infront of them in order for them to be accessible across
-  # all methods within class, if not it will not work. 
+  # Notice how we passed current_player to this method so that we can address player when asking question
   def ask_question(current_player)
     puts "#{current_player.name}: What is #{@random_number_1} + #{@random_number_2}?"
   end
   
-  # I/O - Questin class will take in user input after asking question!
+  # Method to take user input, check if it is correct, print the result, and subtract a life if needed. 
+  # Note we needed to pass current_player again so we could address user in statement AND subtract life from player instance
   def validate_answer(current_player)
-    player_answer = gets.chomp.to_i
-    # Function to check user input and validate if it is correct or not
+    player_answer = gets.chomp.to_i #Add to_i here to ensure that input is converted to integer.
     if player_answer == @answer
       puts "#{current_player.name}: Excellent you are correct!"
     else
@@ -30,8 +28,3 @@ class Question
     end
   end
 end
-
-# Test calls to ensure class and methods are working, these are calls we will have to use in Game
-# new_question = Question.new
-# new_question.ask_question
-# new_question.validate_answer
