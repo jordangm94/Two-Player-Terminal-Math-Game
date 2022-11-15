@@ -6,9 +6,14 @@
 # automatically be set to three. 
 
 class Player
+  attr_reader :lives, :name
   def initialize(name)
     @name = name
     @lives = 3
+  end
+
+  def lose_lives
+    @lives -= 1
   end
   # def check_answer(answer) #This should probably go in the game class! 
   #   if answer == false
