@@ -19,7 +19,7 @@ class Question
   
   # I/O - Questin class will take in user input after asking question!
   def validate_answer(current_player)
-    player_answer = gets.chomp
+    player_answer = gets.chomp.to_i
     # Function to check user input and validate if it is correct or not
     if player_answer == @answer
       puts "#{current_player.name}: Excellent you are correct!"
